@@ -1,6 +1,6 @@
 ---
 source:
-- meta
+- meta/
 authors:
 - name: Trans
   email: transfire@gmail.com
@@ -10,7 +10,23 @@ copyrights:
   license: BSD-2-Clause
 replacements: []
 alternatives: []
-requirements: []
+requirements:
+- name: detroit
+  groups:
+  - build
+  development: true
+- name: rubytest
+  groups:
+  - test
+  development: true
+- name: microtest
+  groups:
+  - test
+  development: true
+- name: ae
+  groups:
+  - test
+  development: true
 dependencies: []
 conflicts: []
 repositories: []

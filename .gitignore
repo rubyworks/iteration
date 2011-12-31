@@ -1,0 +1,10 @@
+.reap/digest
+.yardoc
+doc
+log
+man/man1/*.1
+man/man1/*.html
+pkg
+tmp
+web
+work/sandbox

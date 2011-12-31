@@ -1,0 +1,2 @@
+Iteration is class that encapsulate an step in an each loop.
+It can be used to query infromation about an iteration easily.

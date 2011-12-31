@@ -1,0 +1,75 @@
+= Iteration
+
+* http://death.rubyforge.org
+* http://death.rubyforge.org/iteration
+
+
+== DESCRIPTION
+
+Have you ever wanted to know if an iteration was the last,
+or the first, or what iteration results came before the
+current? Well, now you can!
+
+Iteration is class that encapsulate an step in an each loop.
+It can be used to query infromation about an iteration easily.
+
+
+== FEATURES/ISSUES
+
+* Query sate of each iteration.
+* Supports look-ahead features on Arrays.
+* This library still needs improvement however.
+
+
+== RELEASE NOTES
+
+Please see RELEASE file.
+
+
+== SYNOPSIS
+
+Iterate over each element of array using an iteration object.
+
+  [1,2,3].each_iteration do |it|
+    p it.index
+    p it.value
+    p it.first?
+    p it.last?
+    p it.prior
+    p it.after
+  end
+
+on each successive iteration produces:
+
+  0          1          2
+  1          2          3
+  true       false      false
+  false      false      true
+  []         [1]        [1,2]
+  [2,3]      [3]        []
+
+
+== HOW TO INSTALL
+
+To install with RubyGems simply open a console and type:
+
+  gem install iteration
+
+Local installation requires Setup.rb (gem install setup),
+then download the tarball package and type:
+
+  tar -xvzf iteration-1.0.0.tgz
+  cd iteration-1.0.0.tgz
+  sudo setup.rb all
+
+Windows users use 'ruby setup.rb all'.
+
+
+== LICENSE
+
+Copyright (c) 2009 Coding Dead <http://death.rubyforge.org>
+
+This program is ditributed unser the terms of the LGPL v3 license.
+
+See LICENSE file for details.
+

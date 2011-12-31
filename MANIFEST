@@ -1,0 +1,6 @@
+#!mast bin lib test [A-Z]*.*
+lib/iteration.rb
+test/test_iteration.rb
+HISTORY.rdoc
+README.rdoc
+COPYING.rdoc

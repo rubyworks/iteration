@@ -1,0 +1,25 @@
+---
+gem:
+  active: true
+
+github:
+  gh_pages: web
+
+dnote:
+  title: Source Notes
+  output: log/notes.html
+
+#locat:
+#  output   : ~
+#  active   : true
+
+vclog:
+  output:
+    - log/history.html
+    - log/changes.html
+
+email:
+  mailto:
+    - ruby-talk@ruby-lang.org
+    - rubyworks-mailinglist@googlegroups.com
+

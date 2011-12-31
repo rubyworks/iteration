@@ -1,7 +1,7 @@
 = Iteration
 
-* http://death.rubyforge.org
-* http://death.rubyforge.org/iteration
+{Website}[http://rubyworks.github.com/iteration] /
+{Development}[http://github.com/rubyworks/iteration]
 
 
 == DESCRIPTION
@@ -10,15 +10,14 @@ Have you ever wanted to know if an iteration was the last,
 or the first, or what iteration results came before the
 current? Well, now you can!
 
-Iteration is class that encapsulate an step in an each loop.
+Iteration is a class that encapsulate a step in an each loop.
 It can be used to query infromation about an iteration easily.
 
 
-== FEATURES/ISSUES
+== FEATURES
 
 * Query sate of each iteration.
 * Supports look-ahead features on Arrays.
-* This library still needs improvement however.
 
 
 == RELEASE NOTES
@@ -65,11 +64,11 @@ then download the tarball package and type:
 Windows users use 'ruby setup.rb all'.
 
 
-== LICENSE
+== COPYRIGHTS
 
-Copyright (c) 2009 Coding Dead <http://death.rubyforge.org>
+Copyright (c) 2009 Rubyworks
 
-This program is ditributed unser the terms of the LGPL v3 license.
+This program is ditributed unser the terms of the *BSD-2-Clause* license.
 
-See LICENSE file for details.
+See COPYING.rdoc file for details.
 

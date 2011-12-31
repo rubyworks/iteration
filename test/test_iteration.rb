@@ -1,7 +1,10 @@
-require 'test/unit'
+require 'microtest'
+require 'ae/legacy'
+
 require 'iteration'
 
-class TC_Array < Test::Unit::TestCase
+class TestArray < MicroTest::TestCase
+  include AE::Legacy::Assertions
 
   def test_each_iteration
     a = [1,2,3]
@@ -25,7 +28,8 @@ class TC_Array < Test::Unit::TestCase
 end
 
 
-class TC_Enumerator < Test::Unit::TestCase
+class TestEnumerator < MicroTest::TestCase
+  include AE::Legacy::Assertions
 
   def test_iteration
     e = [1,2,3].to_enum(:each)

@@ -1,10 +1,20 @@
 = HISTORY
 
+== 1.0.1 / 2012-12-31
+
+This release simply update the the build configuration.
+It is functionally the same as the previous release.
+
+Changes:
+
+* Modernize build configuration.
+
+
 == 1.0.0 / 2009-07-18
 
 This is the initial release of Iteration.
 
-* 1 Major Enhancment
+Changes:
 
-    * Happy Birthday!
+* Happy Birthday!
 

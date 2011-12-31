@@ -1,80 +1,76 @@
 if RUBY_VERSION < "1.9"
   require 'enumerator'
+  Enumerator = Enumerable::Enumerator
 end
 
-module Enumerable
+# Iteration encapsulates a step in an each loop.
+#
+class Iteration
 
-  # Iteration encapsulates a step in an each loop.
+  attr_reader :enum, :index, :value, :prior
+
+  def initialize(enum)
+    @enum  = enum
+    @index = 0
+    @value = nil
+    @prior = []
+  end
+
+  def first?
+    index == 0
+  end
+
+  def last?
+    index+1 == enum.size
+  end
+
+  def after
+    enum.slice(index+1..-1)
+  end
+
+#private
+
+  # TODO: For Ruby 1.9 make private and use fcall.
   #
-  class Iteration
+  def __step__(value, &block)
+    @value = value
+    block.call
+    @index += 1
+    @prior << value
+  end
 
-    attr_reader :enum, :index, :value, :prior
+  #def next_iteration
+  #  @index += 1
+  #  @prior << value
+  #  @after.shift if enum.respond_to?(:shift)
+  #end
 
-    def initialize(enum)
-      @enum  = enum
-      @index = 0
-      @value = nil
-      @prior = []
-    end
+end
 
-    def first?
-      index == 0
-    end
+class Enumerator
 
-    def last?
-      index+1 == enum.size
-    end
-
-    def after
-      enum.slice(index+1..-1)
-    end
-
-  #private
-
-    # TODO: For Ruby 1.9 make private and use fcall.
-    #
-    def __step__(value, &block)
-      @value = value
-      block.call
-      @index += 1
-      @prior << value
-    end
-
-    #def next_iteration
-    #  @index += 1
-    #  @prior << value
-    #  @after.shift if enum.respond_to?(:shift)
-    #end
-  end #class Iteration
-
-  # This adds #iteration and #with_iteration methods
-  # to Enumerator.
-  #
   # TODO: How to access the underlying object of enumeration?
   # We need it to provide #size and #slice if possible.
   #
-  class Enumerator
 
-    def iteration #:yield:
-      it = Iteration.new(self)
-      each do |e|
-        it.__step__(e){ yield(it) }
-      end
+  #
+  def iteration #:yield:
+    it = Iteration.new(self)
+    each do |e|
+      it.__step__(e){ yield(it) }
     end
+  end
 
-    def with_iteration(&block)
-      it = Iteration.new(self)
-      each do |e|
-        it.__step__(e){ yield(e,it) }
-      end
+  def with_iteration(&block)
+    it = Iteration.new(self)
+    each do |e|
+      it.__step__(e){ yield(e,it) }
     end
-
-  end #class Enumerator
+  end
 
 end
 
-#
-class Array #:nodoc:
+class Array
 
   # Iterate over each element of array using an iteration object.
   #
@@ -105,7 +101,7 @@ class Array #:nodoc:
         it.__step__(e){ yield(it) }
       end
     else
-      return Enumerable::Enumerator.new(self, :each_iteration)
+      Enumerator.new(self, :each_iteration)
     end
   end
 
@@ -119,7 +115,7 @@ class Array #:nodoc:
         it.__step__(e){ yield(e, it) }
       end
     else
-      return Enumerable::Enumerator.new(self, :each_iteration)
+      Enumerator.new(self, :each_iteration)
     end
   end
 

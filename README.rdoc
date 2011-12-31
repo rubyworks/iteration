@@ -3,6 +3,8 @@
 {Website}[http://rubyworks.github.com/iteration] /
 {Development}[http://github.com/rubyworks/iteration]
 
+{<img src="https://secure.travis-ci.org/rubyworks/iteration.png" />}[http://travis-ci.org/rubyworks/iteration]
+
 
 == DESCRIPTION
 

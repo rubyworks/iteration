@@ -1,12 +1,13 @@
 = HISTORY
 
-== 1.0.1 / 2012-12-31
+== 1.1.0 / 2012-12-31
 
-This release simply update the the build configuration.
-It is functionally the same as the previous release.
+This release move the Iteration class to the toplevel
+namespace.
 
 Changes:
 
+* Move Iteration to toplevel.
 * Modernize build configuration.
 
 

@@ -22,7 +22,7 @@ load_path:
 revision: 0
 created: '2007-07-18'
 title: Iteration
-version: 1.0.1
+version: 1.1.0
 name: iteration
 description: ! 'Iteration is class that encapsulate an step in an each loop.
 

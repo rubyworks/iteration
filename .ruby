@@ -21,6 +21,7 @@ load_path:
 - lib
 revision: 0
 created: '2007-07-18'
+summary: Universal Iteration Object
 title: Iteration
 version: 1.1.0
 name: iteration

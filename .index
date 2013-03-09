@@ -13,9 +13,17 @@ requirements:
   development: true
   name: detroit
 - groups:
+  - build
+  development: true
+  name: ergo
+- groups:
   - test
   development: true
   name: rubytest
+- groups:
+  - test
+  development: true
+  name: rubytest-cli
 - groups:
   - test
   development: true

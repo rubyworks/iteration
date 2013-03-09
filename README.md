@@ -1,6 +1,8 @@
 # Iteration
 
 [Website](http://rubyworks.github.com/iteration) /
+[Documentation](http://rubydoc.info/gems/iteration) /
+[Report Issue](http://github.com/rubyworks/iteration/issues) /
 [Development](http://github.com/rubyworks/iteration)
 
 [![Build Status](https://secure.travis-ci.org/rubyworks/iteration.png)](http://travis-ci.org/rubyworks/iteration)
@@ -11,10 +13,9 @@
 
 Have you ever wanted to know if an iteration was the last,
 or the first, or what iteration results came before the
-current? Well, now you can!
-
-Iteration is a class that encapsulate a step in an each loop.
-It can be used to query infromation about an iteration easily.
+current? Well, now you can! Iteration is a class that encapsulates
+a step in an each loop. It can be used to query infromation about
+an iteration easily.
 
 
 ## FEATURES

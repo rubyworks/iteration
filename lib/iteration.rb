@@ -30,7 +30,7 @@ class Iteration
 
 #private
 
-  # TODO: For Ruby 1.9 make private and use fcall.
+  # TODO: For Ruby 1.9 make private and use fcall ?
   #
   def __step__(value, &block)
     @value = value
@@ -61,7 +61,7 @@ class Enumerator
     end
   end
 
-  def with_iteration(&block)
+  def with_iteration(&block) #:yield:
     it = Iteration.new(self)
     each do |e|
       it.__step__(e){ yield(e,it) }
@@ -83,7 +83,7 @@ class Array
   #     p it.after
   #   end
   #
-  # on each successive iteration produces:
+  # On each successive iteration this produces:
   #
   #   0          1          2
   #   1          2          3
@@ -92,8 +92,7 @@ class Array
   #   []         [1]        [1,2]
   #   [2,3]      [3]        []
   #
-  # CREDIT: Trans
-
+  # @return [Enumerator] if no block is given, otherwise nothing.
   def each_iteration(&block)
     if block_given?
       it = Iteration.new(self)
@@ -108,6 +107,7 @@ class Array
   # Same as #each_iteration, but provides both the iterated
   # element and the iteration.
   #
+  # @return [Enumerator] if no block is given, otherwise nothing.
   def each_with_iteration(&block)
     if block_given?
       it = Iteration.new(self)
@@ -115,9 +115,8 @@ class Array
         it.__step__(e){ yield(e, it) }
       end
     else
-      Enumerator.new(self, :each_iteration)
+      Enumerator.new(self, :each_with_iteration)
     end
   end
 
 end
-

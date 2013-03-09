@@ -1,6 +1,6 @@
 ---
-type: ruby
 revision: 2013
+type: ruby
 sources:
 - var
 authors:
@@ -32,18 +32,20 @@ resources:
   label: Homepage
 repositories: []
 categories: []
-load_path:
-- lib
 copyrights:
 - holder: Rubyworks
   year: '2007'
   license: BSD-2-Clause
+customs: []
+paths:
+  lib:
+  - lib
 created: '2007-07-18'
 summary: Universal Iteration Object
 title: Iteration
-version: 1.1.0
+version: 1.1.1
 name: iteration
 description: ! 'Iteration is class that encapsulate an step in an each loop.
 
   It can be used to query infromation about an iteration easily.'
-date: '2012-12-08'
+date: '2013-03-08'
